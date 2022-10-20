@@ -1,27 +1,19 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.container{
+  border: 1px solid red;
+  padding: 1em;
 }
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+/* iOS places the subtitle above the title */
+ion-card-header.ios {
+  display: flex;
+  flex-flow: column-reverse;
 }
+.cardContainer{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  border: 1px solid black;
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
 }
+.card{
+  width:30em;
 
-#container a {
-  text-decoration: none;
 }

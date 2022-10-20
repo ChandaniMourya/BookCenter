@@ -1,25 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
 
-  <div id="container">
-   
-     <form (ngSubmit)="logForm()">
-      <ion-item>
-        <ion-label>Todo</ion-label>
-        <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Description</ion-label>
-        <ion-textarea [(ngModel)]="todo.description" name="description"></ion-textarea>
-      </ion-item>
-      <ion-button ion-button type="submit" block>Add Todo</ion-button>
-    </form>
+  <div class="container">
+    <div class="cardContainer">
+      <ion-card class="card" *ngFor="let carditems of bookdata" >
+        <img alt="Think and grow rich" src={{carditems.url}} />
+        <ion-card-header>
+          <ion-card-title>{{carditems.Bookname}}</ion-card-title>
+          <ion-card-subtitle>{{carditems.witer}}</ion-card-subtitle>
+        </ion-card-header>
+  
+        <ion-card-content>{{carditems.description}}
+        </ion-card-content>
+        <ion-button color="success" fill="outline">Edit</ion-button>
+        <ion-button color="danger">Delete</ion-button>
+      </ion-card>
+    </div>
+ 
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="additemspage()">
+        <ion-fab-button>
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+      
+
   </div>
 </ion-content>
+
+<router-outlet></router-outlet>
+<!-- ngFor=let carditems of bookdata  -->
