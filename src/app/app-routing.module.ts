@@ -10,11 +10,7 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },
-  {
-    path: 'add-items',
-    loadChildren: () => import('./add-items/add-items.module').then( m => m.AddItemsPageModule)
-  },
+  }
 ];
 
 @NgModule({

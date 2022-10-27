@@ -1,0 +1,26 @@
+<div class="addItemsForm">
+  <form [formGroup]="ProductForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Book name: </ion-label>
+      <ion-input placeholder="Enter text" type="text" formControlName = "name" name="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Author name: </ion-label>
+      <ion-input placeholder="Enter text" type="text" formControlName = "author" name="author"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">description: </ion-label>
+      <ion-input placeholder="Enter text" type="text" formControlName = "description" name="description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Price: </ion-label>
+      <ion-input placeholder="Enter text" type="text" formControlName = "price" name="price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Url: </ion-label>
+      <ion-textarea placeholder="Enter text" type="text" formControlName = "url of image" name="url"></ion-textarea>
+    </ion-item>
+    <ion-button ion-button type="submit" block>Add Todo</ion-button>
+  </form>
+</div>

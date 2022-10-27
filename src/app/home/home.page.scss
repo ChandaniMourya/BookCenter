@@ -1,6 +1,13 @@
 .container{
+  display: flex;
+justify-content: space-between;
+flex-direction: column;
   border: 1px solid red;
-  padding: 1em;
+  // padding: 1em;
+}
+.fixed-div {
+right: 0;
+bottom: 0;
 }
 /* iOS places the subtitle above the title */
 ion-card-header.ios {

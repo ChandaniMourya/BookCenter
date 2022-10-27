@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 import {bookdata} from '../../assets/Data/BootItems'
+import { AddBookComponent } from './add-book/add-book.component';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -9,10 +11,16 @@ import {bookdata} from '../../assets/Data/BootItems'
 })
 export class HomePage {
   bookdata:any;
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private modelctrl: ModalController, private router: Router, private route: ActivatedRoute) {
     this.bookdata = bookdata;
   }
-  additemspage() {
-    this.router.navigate(['/add-items']);
+  async additemspage() {
+    // this.router.navigate(['/add-items']);
+    let popup = this.modelctrl.create({
+      component: AddBookComponent,
+      cssClass: "auto-height"
+    });
+    (await popup).present()
+
   }
 }
