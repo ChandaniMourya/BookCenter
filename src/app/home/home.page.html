@@ -2,15 +2,15 @@
 
   <div class="container">
     <div class="cardContainer">
-      <ion-card class="card" *ngFor="let carditems of bookdata">
-        <img alt="Think and grow rich" src={{carditems.url}} />
+      <ion-card class="card" *ngFor="let carditems of book">
+        <img alt="Think and grow rich" src={{carditems.bookimage}} />
         <ion-card-header>
-          <ion-card-title>{{carditems.Bookname}}</ion-card-title>
-          <ion-card-subtitle>{{carditems.witer}}</ion-card-subtitle>
+          <ion-card-title>{{carditems.bookname}}</ion-card-title>
+          <ion-card-subtitle>{{carditems.bookauthor}}</ion-card-subtitle>
         </ion-card-header>
 
         <ion-card-content>
-          <span>{{carditems.description}}</span>
+          <span>{{carditems.bookdesc}}</span>
           <p style="font-weight:bold;"> &#x20B9; {{carditems.price}}</p>
         </ion-card-content>
         <ion-button color="success" fill="outline">Edit</ion-button>
