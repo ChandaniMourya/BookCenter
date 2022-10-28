@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import {bookdata} from '../../assets/Data/BootItems'
+// import {bookdata} from '../../assets/Data/BootItems'
 import { AddBookComponent } from './add-book/add-book.component';
 import { HttpClient } from '@angular/common/http';
+import { EditFormComponent } from './edit-form/edit-form.component';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -12,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomePage {
   book:any;
-  constructor(private http: HttpClient,private modelctrl: ModalController, private router: Router, private route: ActivatedRoute) {
+  constructor(private modalCtrl: ModalController,private http: HttpClient,private modelctrl: ModalController, private router: Router, private route: ActivatedRoute) {
     
   }
   ngOnInit(){
@@ -27,5 +28,24 @@ export class HomePage {
     });
     (await popup).present()
 
+  }
+
+  async editItems(){
+    const modal = await this.modalCtrl.create({
+      component:EditFormComponent,
+
+    });
+    modal.present();
+
+    const { data, role } = await modal.onWillDismiss();
+
+  }
+
+  deleteItems(id:number){
+    // http://localhost:8050/deleteBook/{bookid}
+    this.http.delete("http://localhost:8050/deleteBook/" + id).subscribe((data)=>{
+       this.book = data
+    })
+    console.log(id)
   }
 }

@@ -1,0 +1,24 @@
+<form method="post" [formGroup]="ProductForm" >
+  <ion-item>
+    <ion-label position="floating">Book name: </ion-label>
+    <ion-input placeholder="Enter text" type="text" formControlName = "bookname" name="bookname"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Author name: </ion-label>
+    <ion-input placeholder="Enter text" type="text" formControlName = "bookauthor" name="author"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">description: </ion-label>
+    <ion-input placeholder="Enter text" type="text" formControlName = "bookdesc" name="description"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Price: </ion-label>
+    <ion-input placeholder="Enter text" type="text" formControlName = "bookprice" name="price"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Url: </ion-label>
+    <ion-textarea placeholder="Enter text" type="text" formControlName = "bookimage" name="url"></ion-textarea>
+  </ion-item>
+  <ion-button ion-button type="submit" block>Add Todo</ion-button>
+</form>

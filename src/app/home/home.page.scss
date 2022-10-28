@@ -1,4 +1,6 @@
 .container{
+  margin: 0 auto;
+  width:80%;
   display: flex;
 justify-content: space-between;
 flex-direction: column;
@@ -17,10 +19,9 @@ ion-card-header.ios {
 .cardContainer{
   display: grid;
   grid-template-columns: auto auto auto;
-  border: 1px solid black;
+  // border: 1px solid black;
 
 }
 .card{
   width:30em;
-
 }

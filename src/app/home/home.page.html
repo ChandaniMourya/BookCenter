@@ -11,10 +11,10 @@
 
         <ion-card-content>
           <span>{{carditems.bookdesc}}</span>
-          <p style="font-weight:bold;"> &#x20B9; {{carditems.price}}</p>
+          <p style="font-weight:bold;"> &#x20B9; {{carditems.bookprice}}</p>
         </ion-card-content>
-        <ion-button color="success" fill="outline">Edit</ion-button>
-        <ion-button color="danger">Delete</ion-button>
+        <ion-button color="success" fill="outline" (click)="editItems()">Edit</ion-button>
+        <ion-button color="danger" (click)="deleteItems(carditems.bookid)">Delete</ion-button>
       </ion-card>
     </div>
     <div class="addform">

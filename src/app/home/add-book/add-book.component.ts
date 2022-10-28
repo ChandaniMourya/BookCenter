@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-book',
@@ -8,19 +9,30 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class AddBookComponent implements OnInit {
   ProductForm:FormGroup;
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.ProductForm = new FormGroup({
-      'name': new FormControl(''),
-      'author': new FormControl(''),
-      'description': new FormControl(''),
-      'price': new FormControl('')
+      'bookname': new FormControl(''),
+      'bookauthor': new FormControl(''),
+      'bookdesc': new FormControl(''),
+      'bookprice': new FormControl(''),
+      'bookimage': new FormControl('')
+
     })
   }
 
   onSubmit(){
+    this.http.post("http://localhost:8050/addBook",this.ProductForm.value)
+    .subscribe((result)=>{
+      console.log("add one book"+ this.ProductForm.value)
+
+    })
     console.log(this.ProductForm.value)
   }
 
+  // deleteItems(){
+  //   this.http.delete("http://localhost:8050/addBook")
+    
+  // }
 }
