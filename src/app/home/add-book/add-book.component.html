@@ -21,6 +21,6 @@
       <ion-label position="floating">Url: </ion-label>
       <ion-textarea placeholder="Enter text" type="text" formControlName = "bookimage" name="url"></ion-textarea>
     </ion-item>
-    <ion-button ion-button type="submit" block>Add Todo</ion-button>
+    <ion-button ion-button type="submit" (click)="addBook()"  block>Add Book</ion-button>
   </form>
 </div>

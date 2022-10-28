@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-// import {bookdata} from '../../assets/Data/BootItems'
+import {ApiService} from '../service/api.service'
 import { AddBookComponent } from './add-book/add-book.component';
 import { HttpClient } from '@angular/common/http';
 import { EditFormComponent } from './edit-form/edit-form.component';
@@ -13,7 +13,7 @@ import { EditFormComponent } from './edit-form/edit-form.component';
 })
 export class HomePage {
   book:any;
-  constructor(private modalCtrl: ModalController,private http: HttpClient,private modelctrl: ModalController, private router: Router, private route: ActivatedRoute) {
+  constructor(private serviceCall:ApiService,private modalCtrl: ModalController,private http: HttpClient,private modelctrl: ModalController, private router: Router, private route: ActivatedRoute) {
     
   }
   ngOnInit(){
@@ -41,11 +41,12 @@ export class HomePage {
 
   }
 
-  deleteItems(id:number){
-    // http://localhost:8050/deleteBook/{bookid}
-    this.http.delete("http://localhost:8050/deleteBook/" + id).subscribe((data)=>{
-       this.book = data
+   deleteItems(id:number){
+    this.serviceCall.deleteBook(id).subscribe((res1:any)=>{
+      this.serviceCall.getAllBooks().subscribe((res2:any)=>{
+      this.book = res2;
+      console.log('all books')
     })
-    console.log(id)
+    })
   }
 }
