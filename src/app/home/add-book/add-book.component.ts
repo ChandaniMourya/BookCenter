@@ -1,6 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-add-book',
@@ -9,11 +10,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AddBookComponent implements OnInit {
   ProductForm:FormGroup;
-  
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.ProductForm = new FormGroup({
+    this.ProductForm = this.fb.group({
       'bookname': new FormControl(''),
       'bookauthor': new FormControl(''),
       'bookdesc': new FormControl(''),

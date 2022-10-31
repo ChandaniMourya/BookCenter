@@ -3,7 +3,7 @@
   <div class="container">
     <div class="cardContainer">
       <ion-card class="card" *ngFor="let carditems of book">
-        <img alt="Think and grow rich" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg/330px-Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg" />
+        <img alt="Think and grow rich" src="https://vlebazaar.in/image/cache/catalog/think%20and%20grow-550x550.png" />
         <ion-card-header>
           <ion-card-title>{{carditems.bookname}}</ion-card-title>
           <ion-card-subtitle>{{carditems.bookauthor}}</ion-card-subtitle>
@@ -13,7 +13,7 @@
           <span>{{carditems.bookdesc}}</span>
           <p style="font-weight:bold;"> &#x20B9; {{carditems.bookprice}}</p>
         </ion-card-content>
-        <ion-button color="success" fill="outline" (click)="editItems()">Edit</ion-button>
+        <ion-button color="success" fill="outline" (click)="editItems(carditems)">Edit</ion-button>
         <ion-button color="danger" (click)="deleteItems(carditems.bookid)">Delete</ion-button>
       </ion-card>
     </div>

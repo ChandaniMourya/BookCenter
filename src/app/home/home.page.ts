@@ -13,6 +13,7 @@ import { EditFormComponent } from './edit-form/edit-form.component';
 })
 export class HomePage {
   book:any;
+
   constructor(private serviceCall:ApiService,private modalCtrl: ModalController,private http: HttpClient,private modelctrl: ModalController, private router: Router, private route: ActivatedRoute) {
     
   }
@@ -27,18 +28,18 @@ export class HomePage {
       cssClass: "auto-height"
     });
     (await popup).present()
-
+    ;(await popup).onDidDismiss().then(()=>{
+      console.log("added")
+    })
   }
-
-  async editItems(){
+  async editItems(d){
+    console.log(d)
     const modal = await this.modalCtrl.create({
       component:EditFormComponent,
-
+      componentProps: {edit:d}
     });
     modal.present();
-
-    const { data, role } = await modal.onWillDismiss();
-
+    
   }
 
    deleteItems(id:number){

@@ -14,5 +14,8 @@ export class ApiService {
   deleteBook(id){
     return this.http.delete("http://localhost:8050/deleteBook/" + id)
   }
+  // editBook(){
+  //   return this.http.get("http://localhost:8050/updateBook");
+  // }
 }
  
