@@ -7,10 +7,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-
   getAllBooks(){
     return this.http.get("http://localhost:8050/getAllBooks")
   }
+ 
   deleteBook(id){
     return this.http.delete("http://localhost:8050/deleteBook/" + id)
   }

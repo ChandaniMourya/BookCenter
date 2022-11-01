@@ -17,10 +17,7 @@
       <ion-label position="floating">Price: </ion-label>
       <ion-input placeholder="Enter text" type="text" formControlName = "bookprice" name="price"></ion-input>
     </ion-item>
-    <!-- <ion-item>
-      <ion-label position="floating">Url: </ion-label>
-      <ion-textarea placeholder="Enter text" type="text" formControlName = "bookimage" name="url"></ion-textarea>
-    </ion-item> -->
-    <ion-button ion-button type="submit"  block>Add Book</ion-button>
+    <ion-button ion-button type="submit" (click)="updatedBookAlert()" block>Update book</ion-button>
+    <ion-button color="medium"  (click)="cancel()">Cancel</ion-button>
   </form>
 </div>
