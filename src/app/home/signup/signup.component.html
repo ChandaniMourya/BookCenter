@@ -1,31 +1,33 @@
-
 <div class="signupContainer">
   <div class="">
-    <ion-item>
-      <ion-label position="floating">Username</ion-label>
-      <ion-input placeholder="Enter username"  type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input placeholder="Enter email" type="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input placeholder="Enter password" type="password"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Conform password</ion-label>
-      <ion-input placeholder="Enter password" type="password"></ion-input>
-    </ion-item>
-    <ion-button type="submit" fill="outline">Sign Up</ion-button>
-   </div>
-  
+    <form method="post" [formGroup]="signup" (ngSubmit)="onSubmit()">
+
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input placeholder="Enter username" formControlName = "name" name="name"  type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input placeholder="Enter email" formControlName = "email" name="email" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input placeholder="Enter password"  formControlName = "password" name="password"  type="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Conform password</ion-label>
+        <ion-input placeholder="Enter password" formControlName = "conformpassword" name="conformpassword"  type="password"></ion-input>
+      </ion-item>
+      <ion-button type="submit" fill="outline">Sign Up</ion-button>
+    </form>
+  </div>
+
 
   <div class="">
-  <span>Already have an account?<ion-button fill="clear"><a routerLink="/login">Login</a></ion-button></span>
+    <span>Already have an account?<ion-button fill="clear"><a routerLink="/login">Login</a></ion-button></span>
   </div>
 
 </div>
 
 
-<!-- formControlName = "email" name="email"  -->
+<!-- formControlName = "username" name="username" username -->
