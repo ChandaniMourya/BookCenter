@@ -1,0 +1,28 @@
+<div class="loginCard">
+  <div class="cancelbutton">
+    <ion-button fill="clear" style="float:right;">
+      <ion-icon size="large" name="close-outline"></ion-icon>
+    </ion-button>
+  </div>
+  <div>
+<form method="post" [formGroup]="logindetails" (ngSubmit)="onSubmit()">
+    
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input placeholder="Enter email" formControlName = "email" name="email" type="email"></ion-input>
+      <ion-note slot="helper">Enter a valid email</ion-note>
+      <ion-note slot="error">Invalid email</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input placeholder="Enter password"formControlName = "password" name="password" type="password"></ion-input>
+      <ion-note slot="helper">Enter a valid password</ion-note>
+      <ion-note slot="error">Invalid password</ion-note>
+    </ion-item>
+    <ion-button type="submit" fill="outline">Login</ion-button>
+    </form>
+  </div>
+  <div class="footter">
+    <span>Need a account?<ion-button fill="clear"><a routerLink="/Signup">SignUp</a></ion-button></span>
+  </div>
+</div>
