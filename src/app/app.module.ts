@@ -8,10 +8,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './home/login/login.component';
-import { SignupComponent } from './home/signup/signup.component';
+//import { SignupComponent } from './home/signup/signup.component';
+import { RegisterComponent } from './register/register.component';
+
 
 @NgModule({
-  declarations: [AppComponent,LoginComponent,SignupComponent],
+  declarations: [AppComponent,LoginComponent,RegisterComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  HttpClientModule   ,FormsModule,
     ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

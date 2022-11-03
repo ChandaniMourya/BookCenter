@@ -8,7 +8,7 @@ import { AddBookComponent } from './add-book/add-book.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 // import { LoginComponent } from './login/login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,8 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     IonicModule,
     HomePageRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    //FormsModule,
+    //ReactiveFormsModule
   ],
   declarations: [HomePage, AddBookComponent, EditFormComponent,NavbarComponent]
 })

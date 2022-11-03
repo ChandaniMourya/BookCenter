@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './home/login/login.component';
 import { SignupComponent } from './home/signup/signup.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
@@ -17,12 +18,16 @@ const routes: Routes = [
   { 
     path: 'login',
     component: LoginComponent
+  },
+  { 
+    path: 'register',
+    component:RegisterComponent
   }
   ,
-  { 
-    path: 'Signup',
-    component: SignupComponent
-  }
+  // { 
+  //   path: 'Signup',
+  //   component: SignupComponent
+  // }
 ];
 
 @NgModule({
