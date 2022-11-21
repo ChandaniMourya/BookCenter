@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl,FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../service/api.service';
-
 
 @Component({
   selector: 'app-register',
@@ -10,42 +9,32 @@ import { ApiService } from '../service/api.service';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  authService: any;
+  // authService: any;
   registerForm: any;
 
-  constructor( 
-                private router: Router , private apiService:ApiService) { }
+  constructor(private router: Router, private apiService: ApiService) {
+    console.log('const');
+  }
 
-  logindetails? : any;
-
+  logindetails?: any;
 
   ngOnInit() {
+    console.log('init');
     this.registerForm = new FormGroup({
-      name:new FormControl(""),
+      name: new FormControl(''),
       //lastname:new FormControl(""),
-      email:new FormControl(""),
-      password:new FormControl(""),
+      email: new FormControl(''),
+      password: new FormControl(''),
       // cpwd:new FormControl(""),
-    })
- 
-  
-   }
-   registerSubmitted(){
+    });
+    console.log('sqdjwqn');
+  }
+
+  registerSubmitted() {
     console.log(this.registerForm.value);
-    this.logindetails = this.registerForm.value
-
-    // console.log(this.logindetails);
-    
-    // this.authService.registerUser(this.registerForm.value);
-    //this.router.navigateByUrl('/products');
-
-    this.apiService.userReg(this.registerForm.value).subscribe((res)=>{
+    this.logindetails = this.registerForm.value;
+    this.apiService.userReg(this.registerForm.value).subscribe((res) => {
       console.log(res);
-      
-    })
-
-   }
-    
-  
+    });
+  }
 }
-

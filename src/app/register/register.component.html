@@ -1,58 +1,58 @@
 <div class="pcontainer">
-  <div class="card-container">
-    <form [formGroup]="registerForm" (ngSubmit)="registerSubmitted()" class="form">
-     <div class="row g-0">
-         <div class="header">
-           <span class="class1"><h1>Register </h1></span>
-         </div>
-     </div>
-     <div class="row mb-3 p-3">
-     <h3>
-             <label for="firstname" class="form-label">Firstname :<br></label>
-             <input type="text" class="form-control" id="firstname" formControlName="name">
-             <span class="fs-4 "></span>
-             </h3>
-         </div>
-         
-         <!-- <div class="row mb-3 p-3">
+    <div class="card-container">
+        <form [formGroup]="registerForm" (ngSubmit)="registerSubmitted()" class="form">
+            <div class="row g-0">
+                <div class="header">
+                    <span class="class1">
+                        <h1>Register </h1>
+                    </span>
+                </div>
+            </div>
+            <div class="row mb-3 p-3">
+                <h3>
+                    <label for="firstname" class="form-label">Firstname :<br></label>
+                    <input type="text" class="form-control" id="firstname" formControlName="name">
+                    <span class="fs-4 "></span>
+                </h3>
+            </div>
+
+            <!-- <div class="row mb-3 p-3">
              <h3>
              <label for="lastname" class="form-label">Lastname :<br></label>
              <input type="text" class="form-control" id="lastname" formControlName="lastname">
              </h3>
          </div> -->
-         
-         <div class="row mb-3 p-3">
-             <h3>
-             <label for="email" class="form-label">E-mail    :<br></label>
-             <input type="text" class="form-control" id="email" formControlName="email" >
-             </h3>
-             <div class="form-text"></div>
-         </div>
-     
-         <div class="row mb-3 p-3">
-             <h3>
-             <label for="pwd" class="form-label">Password :<br></label>
-             <input type="password" class="form-control" id="pwd" formControlName="password" >
-             </h3>
-         </div>
-         
-         <!-- <div class="row mb-3 p-3">
+
+            <div class="row mb-3 p-3">
+                <h3>
+                    <label for="email" class="form-label">E-mail :<br></label>
+                    <input type="text" class="form-control" id="email" formControlName="email">
+                </h3>
+                <div class="form-text"></div>
+            </div>
+
+            <div class="row mb-3 p-3">
+                <h3>
+                    <label for="pwd" class="form-label">Password :<br></label>
+                    <input type="password" class="form-control" id="pwd" formControlName="password">
+                </h3>
+            </div>
+
+            <!-- <div class="row mb-3 p-3">
              <label for="cpwd" class="form-label"> Confirm Passwordd</label>
              <input type="text" class="form-control" id="cpwd" formControlName="cpwd" >
          </div> -->
- 
-         <div class="row" p-6>
-             <h3>
-             <div class="d-grid">
-                 <button type="submit" class="btn btn-primary" >Submit</button>
-             </div>  
-             </h3>  
-         </div>
-         <p>Already have an account ?<a routerLink="/login">Login</a></p>
-     
-     </form>
- </div>
- </div>
- <!--<button  class="btn btn-primary">Go Back</button>-->
-     
- 
+
+            <div class="row" p-6>
+                <h3>
+                    <div class="d-grid">
+                        <button type="submit" id="registerbutton" class="btn btn-primary">Submit</button>
+                    </div>
+                </h3>
+            </div>
+            <p>Already have an account ?<a routerLink="/login">Login</a></p>
+
+        </form>
+    </div>
+</div>
+<!--<button  class="btn btn-primary">Go Back</button>-->

@@ -31,13 +31,10 @@
 //     })
 //   }
 
-  
 // }
 import { Component, OnInit } from '@angular/core';
-//import { Router } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
-import { Subscriber } from 'rxjs';
 import { ApiService } from 'src/app/service/api.service';
 
 @Component({
@@ -46,48 +43,39 @@ import { ApiService } from 'src/app/service/api.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  // logindetailSubmitted() {
-  // throw new Error('Method not implemented.');
-  // }
-
-  constructor(private apiserve: ApiService, private router: Router) { }
-
-  ngOnInit() {
-
+  constructor(private apiserve: ApiService, private router: Router) {
+    console.log('Cons');
   }
 
-showError:boolean = false;
+  ngOnInit() {
+    console.log('ngoninti');
+  }
+
+  showError: boolean = false;
 
   loginForm = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
   });
 
-
-
-
   logindetailSubmitted() {
-    console.log("submit fun :-------------");
+    console.log('submit fun :-------------');
 
     console.log(this.loginForm.value);
 
-    this.apiserve.loginUser(this.loginForm.value).subscribe(res => {
-      console.log(res);
-      if(res){
-        this.router.navigate(['/home']);
-      }else{
-        this.showError = true;
+    this.apiserve.loginUser(this.loginForm.value).subscribe(
+      (res) => {
+        console.log(res);
+        if (res) {
+          this.router.navigate(['/home']);
+        } else {
+          this.showError = true;
+        }
+      },
+
+      (error) => {
+        console.log(error);
       }
-
-
-    }
-
-       , error => {
-         console.log(error)
-       });
-  
-
-
+    );
   }
 }
-

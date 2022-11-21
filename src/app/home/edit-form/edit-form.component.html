@@ -2,22 +2,22 @@
   <form method="post" [formGroup]="editform" (ngSubmit)="onSubmit()">
     <ion-item>
       <ion-label position="floating">Book name: </ion-label>
-      <ion-input placeholder="Enter text" type="text" formControlName = "bookname" name="bookname"></ion-input>
+      <ion-input placeholder="Enter text" type="text" formControlName="bookname" name="bookname"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Author name: </ion-label>
-      <ion-input placeholder="Enter text" type="text" formControlName = "bookauthor" name="author"></ion-input>
+      <ion-input placeholder="Enter text" type="text" formControlName="bookauthor" name="author"></ion-input>
     </ion-item>
-    
+
     <ion-item>
       <ion-label position="floating">description: </ion-label>
-      <ion-input placeholder="Enter text" type="text" formControlName = "bookdesc" name="description"></ion-input>
+      <ion-input placeholder="Enter text" type="text" formControlName="bookdesc" name="description"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Price: </ion-label>
-      <ion-input placeholder="Enter text" type="text" formControlName = "bookprice" name="price"></ion-input>
+      <ion-input placeholder="Enter text" type="text" formControlName="bookprice" name="price"></ion-input>
     </ion-item>
-    <ion-button ion-button type="submit" (click)="updatedBookAlert()" block>Update book</ion-button>
-    <ion-button color="medium"  (click)="cancel()">Cancel</ion-button>
+    <ion-button id="bookupdate" ion-button type="submit" (click)="updatedBookAlert()" block>Update book</ion-button>
+    <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
   </form>
 </div>
